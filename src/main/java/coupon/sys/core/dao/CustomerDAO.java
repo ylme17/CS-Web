@@ -34,7 +34,7 @@ public interface CustomerDAO {
 	/**
 	 * this method get customer by id
 	 */
-	public Customer getCustomer(long id) throws DbException;
+	public Customer getCustomer(int id) throws DbException;
 	
 	/**
 	 * this method get the logged in customer information by id
@@ -65,12 +65,12 @@ public interface CustomerDAO {
 	 * this method check if customer purchased the coupon already by customer id and
 	 * coupon id with customer-coupon table
 	 */
-	public boolean alreadyPurchased(long couponId) throws DbException;
+	public boolean alreadyPurchased(int couponId) throws DbException;
 
 	/**
 	 * this method insert the coupon purchase to customer-coupon table
 	 */
-	public void insertCouponPurchase(long couponId) throws DbException;
+	public void insertCouponPurchase(int couponId) throws DbException;
 
 	/**
 	 * this method get coupons per customer by type inside collection

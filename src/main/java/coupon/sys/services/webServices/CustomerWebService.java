@@ -188,7 +188,7 @@ public class CustomerWebService {
 	 * @return @Coupon
 	 */
 	@GetMapping(value = "/coupon/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> getCoupon(@PathVariable("id") long id, HttpServletRequest request) {
+	public ResponseEntity<?> getCoupon(@PathVariable("id") int id, HttpServletRequest request) {
 		try {
 			CustomerFacade customerFacade = (CustomerFacade) this.getFacade(request);
 			if(customerFacade==null) {

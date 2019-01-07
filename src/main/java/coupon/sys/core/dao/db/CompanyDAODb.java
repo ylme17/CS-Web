@@ -8,7 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
-import java.util.HashSet;
 
 import coupon.sys.core.beans.Company;
 import coupon.sys.core.beans.Coupon;
@@ -115,7 +114,7 @@ public class CompanyDAODb implements CompanyDAO {
 	 * this method get specific company by id
 	 */
 	@Override
-	public Company getCompany(long id) throws DbException {
+	public Company getCompany(int id) throws DbException {
 		Connection con = null;
 		Company company = null;
 		try {
@@ -370,7 +369,7 @@ public class CompanyDAODb implements CompanyDAO {
 	 * this method insert coupon to company-coupon table when coupon created
 	 */
 	@Override
-	public void insertCouponCreation(long couponId) throws DbException {
+	public void insertCouponCreation(int couponId) throws DbException {
 		Connection con = null;
 		try {
 			connectionPool = ConnectionPool.getInstance();
@@ -395,7 +394,7 @@ public class CompanyDAODb implements CompanyDAO {
 	 * this method check if coupon belong to specific company
 	 */
 	@Override
-	public boolean couponBelongComapny(long couponId) throws DbException {
+	public boolean couponBelongComapny(int couponId) throws DbException {
 		Connection con = null;
 		boolean belong = false;
 		try {
@@ -435,7 +434,7 @@ public class CompanyDAODb implements CompanyDAO {
 					+ "and company_coupon.company_id=" + loggedInCompany.getId() + " and coupon.type='" + type.name() + "'";
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(getCouponsByTypeSql);
-			coupons = new ArrayList<Coupon>();
+			coupons = new ArrayList<>();
 			while (rs.next()) {
 				Coupon coupon = new Coupon();
 				coupon.setId(rs.getInt("id"));
@@ -517,7 +516,7 @@ public class CompanyDAODb implements CompanyDAO {
 					+ new java.sql.Date(date.getTime()) + "'";
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(couponByDateSql);
-			CouponsByDate = new HashSet<>();
+			CouponsByDate = new ArrayList<>();
 			while (rs.next()) {
 				Coupon coupon = new Coupon();
 				coupon.setId(rs.getInt("id"));

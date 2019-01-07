@@ -5,9 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
-import java.util.HashSet;
 
 import coupon.sys.core.beans.Company;
 import coupon.sys.core.beans.Coupon;
@@ -125,7 +125,7 @@ public class CouponDAODb implements CouponDAO {
 	 * this method get coupon by id
 	 */
 	@Override
-	public Coupon getCoupon(long id) throws DbException {
+	public Coupon getCoupon(int id) throws DbException {
 		Connection con = null;
 		Coupon coupon = null;
 		try {
@@ -172,7 +172,7 @@ public class CouponDAODb implements CouponDAO {
 			String getAllCouponsSql = "select * from coupon";
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(getAllCouponsSql);
-			coupons = new HashSet<>();
+			coupons = new ArrayList<>();
 			while (rs.next()) {
 				Coupon coupon = new Coupon();
 				coupon.setId(rs.getInt("id"));
@@ -212,7 +212,7 @@ public class CouponDAODb implements CouponDAO {
 			String getCouponsByTypeSql = "select * from coupon where type='" + type.name() + "'";
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(getCouponsByTypeSql);
-			coupons = new HashSet<>();
+			coupons = new ArrayList<>();
 			while (rs.next()) {
 				Coupon coupon = new Coupon();
 				coupon.setId(rs.getInt("id"));
@@ -383,7 +383,7 @@ public class CouponDAODb implements CouponDAO {
 			String couponByDateSql = "select * from coupon where end_date<='" + new java.sql.Date(date.getTime()) + "'";
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(couponByDateSql);
-			CouponByDate = new HashSet<>();
+			CouponByDate = new ArrayList<>();
 			while (rs.next()) {
 				Coupon coupon = new Coupon();
 				coupon.setId(rs.getInt("id"));

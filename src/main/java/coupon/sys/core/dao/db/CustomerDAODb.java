@@ -113,7 +113,7 @@ public class CustomerDAODb implements CustomerDAO {
 	 * this method get customer by id
 	 */
 	@Override
-	public Customer getCustomer(long id) throws DbException {
+	public Customer getCustomer(int id) throws DbException {
 		Connection con = null;
 		Customer customer = null;
 		try {
@@ -154,7 +154,7 @@ public class CustomerDAODb implements CustomerDAO {
 			String getAllCustomersSql = "select * from customer";
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(getAllCustomersSql);
-			customers = new ArrayList<Customer>();
+			customers = new ArrayList<>();
 			while (rs.next()) {
 				Customer customer = new Customer();
 				customer.setId(rs.getInt("id"));
@@ -185,7 +185,7 @@ public class CustomerDAODb implements CustomerDAO {
 		try {
 			connectionPool = ConnectionPool.getInstance();
 			con = connectionPool.getConnection();
-			coupons = new ArrayList<Coupon>();
+			coupons = new ArrayList<>();
 			String getCouponsSql = "select * from coupon inner join customer_coupon on id=customer_coupon.coupon_id "
 					+ "where customer_coupon.customer_id=" + loggedInCustomer.getId();
 			Statement st = con.createStatement();
@@ -253,7 +253,7 @@ public class CustomerDAODb implements CustomerDAO {
 	 * coupon id with customer-coupon table
 	 */
 	@Override
-	public boolean alreadyPurchased(long couponId) throws DbException {
+	public boolean alreadyPurchased(int couponId) throws DbException {
 		Connection con = null;
 		boolean purchased = false;
 		try {
@@ -283,7 +283,7 @@ public class CustomerDAODb implements CustomerDAO {
 	 * this method insert the coupon purchase to customer-coupon table
 	 */
 	@Override
-	public void insertCouponPurchase(long couponId) throws DbException {
+	public void insertCouponPurchase(int couponId) throws DbException {
 		Connection con = null;
 		try {
 			connectionPool = ConnectionPool.getInstance();
@@ -508,7 +508,7 @@ public class CustomerDAODb implements CustomerDAO {
 		try {
 			connectionPool = ConnectionPool.getInstance();
 			con = connectionPool.getConnection();
-			coupons = new ArrayList<Coupon>();
+			coupons = new ArrayList<>();
 			String getCouponsSql = "select * from coupon";
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(getCouponsSql);

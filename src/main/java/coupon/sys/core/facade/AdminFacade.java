@@ -140,7 +140,7 @@ public class AdminFacade implements ClientFacade, AdminFacadeInterface {
 	 * @throws ObjectDontExistException
 	 * @throws DbException
 	 */
-	public Company getCompany(long id) throws ObjectDontExistException, DbException {
+	public Company getCompany(int id) throws ObjectDontExistException, DbException {
 		Company company = companyDAO.getCompany(id);
 		if (company != null) {
 			System.out.println(company.toString());
@@ -246,7 +246,7 @@ public class AdminFacade implements ClientFacade, AdminFacadeInterface {
 	 * @throws ObjectDontExistException
 	 * @throws DbException
 	 */
-	public Customer getCustomer(long id) throws ObjectDontExistException, DbException {
+	public Customer getCustomer(int id) throws ObjectDontExistException, DbException {
 		Customer customer = customerDAO.getCustomer(id);
 		if (customer != null) {
 			System.out.println(customer.toString());

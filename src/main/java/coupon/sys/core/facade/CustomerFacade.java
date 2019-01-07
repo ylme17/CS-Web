@@ -184,7 +184,7 @@ public class CustomerFacade implements ClientFacade, CustomerFacadeInterface {
 	 * @throws ObjectDontExistException
 	 * @throws DbException
 	 */
-	public Coupon getCoupon(long id) throws DbException, ObjectDontExistException {
+	public Coupon getCoupon(int id) throws DbException, ObjectDontExistException {
 		Coupon coupon = couponDAO.getCoupon(id);
 		if(coupon != null) {
 			return coupon;

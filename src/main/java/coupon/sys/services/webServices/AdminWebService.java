@@ -132,7 +132,7 @@ public class AdminWebService {
 	 * @return @Company
 	 */
 	@GetMapping(value = "/company/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> getCompany(@PathVariable("id") long id, HttpServletRequest request) {
+	public ResponseEntity<?> getCompany(@PathVariable("id") int id, HttpServletRequest request) {
 		try {
 			AdminFacade adminFacade = (AdminFacade) this.getFacade(request);
 			if(adminFacade==null) {
@@ -233,7 +233,7 @@ public class AdminWebService {
 	 * @return @Customer
 	 */
 	@GetMapping(value = "/customer/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> getCustomer(@PathVariable("id") long id, HttpServletRequest request) {
+	public ResponseEntity<?> getCustomer(@PathVariable("id") int id, HttpServletRequest request) {
 		try {
 			AdminFacade adminFacade = (AdminFacade) this.getFacade(request);
 			if(adminFacade==null) {

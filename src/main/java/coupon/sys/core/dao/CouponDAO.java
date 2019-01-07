@@ -34,7 +34,7 @@ public interface CouponDAO {
 	/**
 	 * this method get coupon by id
 	 */
-	public Coupon getCoupon(long id) throws DbException;
+	public Coupon getCoupon(int id) throws DbException;
 
 	/**
 	 * this method get all coupons

@@ -35,7 +35,7 @@ public interface CompanyDAO {
 	/**
 	 * this method get specific company by id
 	 */
-	public Company getCompany(long id) throws DbException;
+	public Company getCompany(int id) throws DbException;
 	
 	/**
 	 * this method get the logged in company by id
@@ -75,12 +75,12 @@ public interface CompanyDAO {
 	/**
 	 * this method insert coupon to company-coupon table when coupon created
 	 */
-	public void insertCouponCreation(long couponId) throws DbException;
+	public void insertCouponCreation(int couponId) throws DbException;
 
 	/**
 	 * this method check if coupon belong to specific company
 	 */
-	public boolean couponBelongComapny(long couponId) throws DbException;
+	public boolean couponBelongComapny(int couponId) throws DbException;
 
 	/**
 	 * this method get the coupon by type and company
