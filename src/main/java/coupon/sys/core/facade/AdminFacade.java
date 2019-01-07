@@ -2,6 +2,8 @@ package coupon.sys.core.facade;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 import coupon.sys.core.beans.Company;
 import coupon.sys.core.beans.Customer;
@@ -122,6 +124,7 @@ public class AdminFacade implements ClientFacade, AdminFacadeInterface {
 		Collection<Company> allCompanies = new ArrayList<>();
 		allCompanies = companyDAO.getAllCompanies();
 		if (!allCompanies.isEmpty()) {
+			Collections.sort((List<Company>) allCompanies, (a, b) -> a.getId() - b.getId());
 			System.out.println(allCompanies.toString());
 			return allCompanies;
 		} else {
@@ -227,6 +230,7 @@ public class AdminFacade implements ClientFacade, AdminFacadeInterface {
 		Collection<Customer> allCustomers = new ArrayList<>();
 		allCustomers = customerDAO.getAllCustomer();
 		if (!allCustomers.isEmpty()) {
+			Collections.sort((List<Customer>) allCustomers, (a, b) -> a.getId() - b.getId());
 			System.out.println(allCustomers.toString());
 			return allCustomers;
 		} else {

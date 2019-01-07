@@ -1,6 +1,8 @@
 package coupon.sys.core.facade;
 
 import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 import coupon.sys.core.beans.Coupon;
 import coupon.sys.core.beans.CouponType;
@@ -77,6 +79,7 @@ public class CustomerFacade implements ClientFacade, CustomerFacadeInterface {
 	public Collection<Coupon> getPurchasedCoupons() throws ObjectDontExistException, DbException {
 		Collection<Coupon> purchasedCoupons = customerDAO.getCoupons();
 		if (!purchasedCoupons.isEmpty()) {
+			Collections.sort((List<Coupon>) purchasedCoupons, (a, b) -> a.getId() - b.getId());
 			System.out.println(purchasedCoupons.toString());
 			return purchasedCoupons;
 		} else {
@@ -97,6 +100,7 @@ public class CustomerFacade implements ClientFacade, CustomerFacadeInterface {
 			throws ObjectDontExistException, DbException {
 		Collection<Coupon> purchasedCouponByType = customerDAO.getCouponsByType(type);
 		if (!purchasedCouponByType.isEmpty()) {
+			Collections.sort((List<Coupon>) purchasedCouponByType, (a, b) -> a.getId() - b.getId());
 			System.out.println(purchasedCouponByType.toString());
 			return purchasedCouponByType;
 		} else {
@@ -115,6 +119,7 @@ public class CustomerFacade implements ClientFacade, CustomerFacadeInterface {
 	public Collection<Coupon> getPurchasedCouponsByPrice(double price) throws ObjectDontExistException, DbException {
 		Collection<Coupon> purchasedCouponByPrice = customerDAO.getCouponsByPrice(price);
 		if (!purchasedCouponByPrice.isEmpty()) {
+			Collections.sort((List<Coupon>) purchasedCouponByPrice, (a, b) -> a.getId() - b.getId());
 			System.out.println(purchasedCouponByPrice.toString());
 			return purchasedCouponByPrice;
 		} else {
@@ -132,6 +137,7 @@ public class CustomerFacade implements ClientFacade, CustomerFacadeInterface {
 	public Collection<Coupon> getAllCoupons() throws ObjectDontExistException, DbException{
 		Collection<Coupon> allCoupons = customerDAO.getAllCoupons();
 		if(!allCoupons.isEmpty()) {
+			Collections.sort((List<Coupon>) allCoupons, (a, b) -> b.getId() - a.getId());
 			System.out.println(allCoupons.toString());
 			return allCoupons;
 		} else {
@@ -148,10 +154,11 @@ public class CustomerFacade implements ClientFacade, CustomerFacadeInterface {
 	 * @throws DbException
 	 */
 	public Collection<Coupon> getCouponsByType(CouponType type) throws ObjectDontExistException, DbException {
-		Collection<Coupon> couponByType = couponDAO.getCouponByType(type);
-		if (!couponByType.isEmpty()) {
-			System.out.println(couponByType.toString());
-			return couponByType;
+		Collection<Coupon> couponsByType = couponDAO.getCouponByType(type);
+		if (!couponsByType.isEmpty()) {
+			Collections.sort((List<Coupon>) couponsByType, (a, b) -> b.getId() - a.getId());
+			System.out.println(couponsByType.toString());
+			return couponsByType;
 		} else {
 			throw new ObjectDontExistException("There are no coupons of type " + type);
 		}

@@ -14,7 +14,7 @@ import lombok.Setter;
 @XmlRootElement
 public @Getter @Setter class Company {
 
-	private long id;
+	private int id;
 	private String name;
 	private String password;
 	private String email;
@@ -27,7 +27,7 @@ public @Getter @Setter class Company {
 	 * @param password password of company for client login
 	 * @param email    email of company
 	 */
-	public Company(long id, String name, String password, String email) {
+	public Company(int id, String name, String password, String email) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -56,7 +56,7 @@ public @Getter @Setter class Company {
 	 * @param password password of company for client login
 	 * @param email    email of company
 	 */
-	public Company(long id, String password, String email) {
+	public Company(int id, String password, String email) {
 		super();
 		this.id = id;
 		this.password = password;
@@ -83,7 +83,7 @@ public @Getter @Setter class Company {
 	 * 
 	 * @param id company id
 	 */
-	public Company(long id) {
+	public Company(int id) {
 		setId(id);
 	}
 

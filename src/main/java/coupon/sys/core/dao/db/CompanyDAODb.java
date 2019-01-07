@@ -48,7 +48,7 @@ public class CompanyDAODb implements CompanyDAO {
 
 			ResultSet rs = pst.getGeneratedKeys();
 			rs.next();
-			company.setId(rs.getLong(1));
+			company.setId(rs.getInt(1));
 			rs.close();
 			pst.close();
 		} catch (ConnectionPoolException e) {
@@ -126,7 +126,7 @@ public class CompanyDAODb implements CompanyDAO {
 			ResultSet rs = st.executeQuery(getCompanySql);
 			if(rs.next()) {
 				company = new Company();
-				company.setId(rs.getLong("id"));
+				company.setId(rs.getInt("id"));
 				company.setName(rs.getString("company_name"));
 				company.setPassword(rs.getString("password"));
 				company.setEmail(rs.getString("email"));
@@ -159,7 +159,7 @@ public class CompanyDAODb implements CompanyDAO {
 			ResultSet rs = st.executeQuery(getCompanySql);
 			company = new Company();
 			rs.next();
-			company.setId(rs.getLong("id"));
+			company.setId(rs.getInt("id"));
 			company.setName(rs.getString("company_name"));
 			company.setPassword(rs.getString("password"));
 			company.setEmail(rs.getString("email"));
@@ -192,7 +192,7 @@ public class CompanyDAODb implements CompanyDAO {
 			companies = new ArrayList<Company>();
 			while (rs.next()) {
 				Company company = new Company();
-				company.setId(rs.getLong("id"));
+				company.setId(rs.getInt("id"));
 				company.setName(rs.getString("company_name"));
 				company.setPassword(rs.getString("password"));
 				company.setEmail(rs.getString("email"));
@@ -228,7 +228,7 @@ public class CompanyDAODb implements CompanyDAO {
 			ResultSet rs = st.executeQuery(getCouponsSql);
 			while (rs.next()) {
 				Coupon coupon = new Coupon();
-				coupon.setId(rs.getLong("id"));
+				coupon.setId(rs.getInt("id"));
 				coupon.setTitle(rs.getString("title"));
 				coupon.setStartDate(rs.getDate("start_date"));
 				coupon.setEndDate(rs.getDate("end_date"));
@@ -268,7 +268,7 @@ public class CompanyDAODb implements CompanyDAO {
 			if (rs.next()) {
 				if (rs.getString("password").equals(password)) {
 					loginSuccess = true;
-					loggedInCompany=new Company(rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4));
+					loggedInCompany=new Company(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4));
 				}
 			}
 			rs.close();
@@ -438,7 +438,7 @@ public class CompanyDAODb implements CompanyDAO {
 			coupons = new ArrayList<Coupon>();
 			while (rs.next()) {
 				Coupon coupon = new Coupon();
-				coupon.setId(rs.getLong("id"));
+				coupon.setId(rs.getInt("id"));
 				coupon.setTitle(rs.getString("title"));
 				coupon.setStartDate(rs.getDate("start_date"));
 				coupon.setEndDate(rs.getDate("end_date"));
@@ -478,7 +478,7 @@ public class CompanyDAODb implements CompanyDAO {
 			ResultSet rs = st.executeQuery(couponByPriceSql);
 			while (rs.next()) {
 				Coupon coupon = new Coupon();
-				coupon.setId(rs.getLong("id"));
+				coupon.setId(rs.getInt("id"));
 				coupon.setTitle(rs.getString("title"));
 				coupon.setStartDate(rs.getDate("start_date"));
 				coupon.setEndDate(rs.getDate("end_date"));
@@ -520,7 +520,7 @@ public class CompanyDAODb implements CompanyDAO {
 			CouponsByDate = new HashSet<>();
 			while (rs.next()) {
 				Coupon coupon = new Coupon();
-				coupon.setId(rs.getLong("id"));
+				coupon.setId(rs.getInt("id"));
 				coupon.setTitle(rs.getString("title"));
 				coupon.setStartDate(rs.getDate("start_date"));
 				coupon.setEndDate(rs.getDate("end_date"));

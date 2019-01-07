@@ -76,7 +76,7 @@ public class CompanyWebService {
 	 * @return deleted
 	 */
 	@DeleteMapping(value = "/coupon/{id}")
-	public ResponseEntity<String> removeCoupon(@PathVariable("id") long id, HttpServletRequest request) {
+	public ResponseEntity<String> removeCoupon(@PathVariable("id") int id, HttpServletRequest request) {
 		try {
 			CompanyFacade companyFacade = (CompanyFacade) this.getFacade(request);
 			if(companyFacade==null) {
@@ -97,7 +97,7 @@ public class CompanyWebService {
 	 * @return @Coupon
 	 */
 	@PutMapping(value = "/coupon/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> updateCoupon(@RequestBody Coupon coupon, @PathVariable("id") long id, HttpServletRequest request) {
+	public ResponseEntity<?> updateCoupon(@RequestBody Coupon coupon, @PathVariable("id") int id, HttpServletRequest request) {
 		try {
 			CompanyFacade companyFacade = (CompanyFacade) this.getFacade(request);
 			if(companyFacade==null) {
@@ -117,7 +117,7 @@ public class CompanyWebService {
 	 * @return @Coupon
 	 */
 	@GetMapping(value = "/coupon/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> getCoupon(@PathVariable("id") long id, HttpServletRequest request) {
+	public ResponseEntity<?> getCoupon(@PathVariable("id") int id, HttpServletRequest request) {
 		try {
 			CompanyFacade companyFacade = (CompanyFacade) this.getFacade(request);
 			if(companyFacade==null) {

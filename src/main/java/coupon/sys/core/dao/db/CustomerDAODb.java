@@ -45,7 +45,7 @@ public class CustomerDAODb implements CustomerDAO {
 
 			ResultSet rs = pst.getGeneratedKeys();
 			rs.next();
-			customer.setId(rs.getLong(1));
+			customer.setId(rs.getInt(1));
 			rs.close();
 			pst.close();
 		} catch (ConnectionPoolException e) {
@@ -124,7 +124,7 @@ public class CustomerDAODb implements CustomerDAO {
 			ResultSet rs = st.executeQuery(getCustomerSql);
 			if(rs.next()) {
 				customer = new Customer();
-				customer.setId(rs.getLong("id"));
+				customer.setId(rs.getInt("id"));
 				customer.setName(rs.getString("customer_name"));
 				customer.setPassword(rs.getString("password"));
 			}
@@ -157,7 +157,7 @@ public class CustomerDAODb implements CustomerDAO {
 			customers = new ArrayList<Customer>();
 			while (rs.next()) {
 				Customer customer = new Customer();
-				customer.setId(rs.getLong("id"));
+				customer.setId(rs.getInt("id"));
 				customer.setName(rs.getString("customer_name"));
 				customer.setPassword(rs.getString("password"));
 				customers.add(customer);
@@ -192,7 +192,7 @@ public class CustomerDAODb implements CustomerDAO {
 			ResultSet rs = st.executeQuery(getCouponsSql);
 			while (rs.next()) {
 				Coupon coupon = new Coupon();
-				coupon.setId(rs.getLong("id"));
+				coupon.setId(rs.getInt("id"));
 				coupon.setTitle(rs.getString("title"));
 				coupon.setStartDate(rs.getDate("start_date"));
 				coupon.setEndDate(rs.getDate("end_date"));
@@ -232,7 +232,7 @@ public class CustomerDAODb implements CustomerDAO {
 			if (rs.next()) {
 				if (rs.getString("password").equals(password)) {
 					loginSuccess = true;
-					loggedInCustomer = new Customer(rs.getLong(1), rs.getString(2), rs.getString(3));
+					loggedInCustomer = new Customer(rs.getInt(1), rs.getString(2), rs.getString(3));
 				}
 			}
 			rs.close();
@@ -321,7 +321,7 @@ public class CustomerDAODb implements CustomerDAO {
 			ResultSet rs = st.executeQuery(couponByTypeSql);
 			while (rs.next()) {
 				Coupon coupon = new Coupon();
-				coupon.setId(rs.getLong("id"));
+				coupon.setId(rs.getInt("id"));
 				coupon.setTitle(rs.getString("title"));
 				coupon.setStartDate(rs.getDate("start_date"));
 				coupon.setEndDate(rs.getDate("end_date"));
@@ -361,7 +361,7 @@ public class CustomerDAODb implements CustomerDAO {
 			ResultSet rs = st.executeQuery(couponByPriceSql);
 			while (rs.next()) {
 				Coupon coupon = new Coupon();
-				coupon.setId(rs.getLong("id"));
+				coupon.setId(rs.getInt("id"));
 				coupon.setTitle(rs.getString("title"));
 				coupon.setStartDate(rs.getDate("start_date"));
 				coupon.setEndDate(rs.getDate("end_date"));
@@ -482,7 +482,7 @@ public class CustomerDAODb implements CustomerDAO {
 			ResultSet rs = st.executeQuery(getCustomerSql);
 			customer = new Customer();
 			rs.next();
-			customer.setId(rs.getLong("id"));
+			customer.setId(rs.getInt("id"));
 			customer.setName(rs.getString("customer_name"));
 			customer.setPassword(rs.getString("password"));
 			rs.close();
@@ -514,7 +514,7 @@ public class CustomerDAODb implements CustomerDAO {
 			ResultSet rs = st.executeQuery(getCouponsSql);
 			while (rs.next()) {
 				Coupon coupon = new Coupon();
-				coupon.setId(rs.getLong("id"));
+				coupon.setId(rs.getInt("id"));
 				coupon.setTitle(rs.getString("title"));
 				coupon.setStartDate(rs.getDate("start_date"));
 				coupon.setEndDate(rs.getDate("end_date"));

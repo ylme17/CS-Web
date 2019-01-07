@@ -50,7 +50,7 @@ public class CouponDAODb implements CouponDAO {
 
 			ResultSet rs = pst.getGeneratedKeys();
 			rs.next();
-			coupon.setId(rs.getLong(1));
+			coupon.setId(rs.getInt(1));
 			rs.close();
 			pst.close();
 		} catch (ConnectionPoolException e) {
@@ -136,7 +136,7 @@ public class CouponDAODb implements CouponDAO {
 			ResultSet rs = st.executeQuery(getCouponSql);
 			if(rs.next()) {
 				coupon = new Coupon();
-				coupon.setId(rs.getLong("id"));
+				coupon.setId(rs.getInt("id"));
 				coupon.setTitle(rs.getString("title"));
 				coupon.setStartDate(rs.getDate("start_date"));
 				coupon.setEndDate(rs.getDate("end_date"));
@@ -175,7 +175,7 @@ public class CouponDAODb implements CouponDAO {
 			coupons = new HashSet<>();
 			while (rs.next()) {
 				Coupon coupon = new Coupon();
-				coupon.setId(rs.getLong("id"));
+				coupon.setId(rs.getInt("id"));
 				coupon.setTitle(rs.getString("title"));
 				coupon.setStartDate(rs.getDate("start_date"));
 				coupon.setEndDate(rs.getDate("end_date"));
@@ -215,7 +215,7 @@ public class CouponDAODb implements CouponDAO {
 			coupons = new HashSet<>();
 			while (rs.next()) {
 				Coupon coupon = new Coupon();
-				coupon.setId(rs.getLong("id"));
+				coupon.setId(rs.getInt("id"));
 				coupon.setTitle(rs.getString("title"));
 				coupon.setStartDate(rs.getDate("start_date"));
 				coupon.setEndDate(rs.getDate("end_date"));
@@ -386,7 +386,7 @@ public class CouponDAODb implements CouponDAO {
 			CouponByDate = new HashSet<>();
 			while (rs.next()) {
 				Coupon coupon = new Coupon();
-				coupon.setId(rs.getLong("id"));
+				coupon.setId(rs.getInt("id"));
 				coupon.setTitle(rs.getString("title"));
 				coupon.setStartDate(rs.getDate("start_date"));
 				coupon.setEndDate(rs.getDate("end_date"));

@@ -16,7 +16,7 @@ import lombok.Setter;
 @XmlRootElement
 public @Getter @Setter class Coupon {
 
-	private long id;
+	private int id;
 	private String title;
 	private Date startDate;
 	private Date endDate;
@@ -40,7 +40,7 @@ public @Getter @Setter class Coupon {
 	 * @param price     coupon price
 	 * @param image     image of the item
 	 */
-	public Coupon(long id, String title, Date startDate, Date endDate, int amount, CouponType type, String message,
+	public Coupon(int id, String title, Date startDate, Date endDate, int amount, CouponType type, String message,
 			double price, String image) {
 		super();
 		this.id = id;
@@ -91,7 +91,7 @@ public @Getter @Setter class Coupon {
 	 * 
 	 * @param id
 	 */
-	public Coupon(long id) {
+	public Coupon(int id) {
 		super();
 		this.id = id;
 	}
@@ -112,7 +112,7 @@ public @Getter @Setter class Coupon {
 	 * @param endDate
 	 * @param price
 	 */
-	public Coupon(long id, Date endDate, double price) {
+	public Coupon(int id, Date endDate, double price) {
 		super();
 		this.id = id;
 		this.endDate = endDate;

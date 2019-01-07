@@ -72,7 +72,7 @@ public class AdminWebService {
 	 * @return deleted
 	 */
 	@DeleteMapping(value = "/company/{id}")
-	public ResponseEntity<String> removeCompany(@PathVariable("id") long id, HttpServletRequest request) {
+	public ResponseEntity<String> removeCompany(@PathVariable("id") int id, HttpServletRequest request) {
 		try {
 			AdminFacade adminFacade = (AdminFacade) this.getFacade(request);
 			if(adminFacade==null) {
@@ -93,7 +93,7 @@ public class AdminWebService {
 	 * @return @Company
 	 */
 	@PutMapping(value = "/company/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> updateCompany(@RequestBody Company company, @PathVariable("id") long id, HttpServletRequest request) {
+	public ResponseEntity<?> updateCompany(@RequestBody Company company, @PathVariable("id") int id, HttpServletRequest request) {
 		try {
 			AdminFacade adminFacade = (AdminFacade) this.getFacade(request);
 			if(adminFacade==null) {
@@ -173,7 +173,7 @@ public class AdminWebService {
 	 * @return deleted
 	 */
 	@DeleteMapping(value = "/customer/{id}")
-	public ResponseEntity<String> removeCustomer(@PathVariable("id") long id, HttpServletRequest request) {
+	public ResponseEntity<String> removeCustomer(@PathVariable("id") int id, HttpServletRequest request) {
 		try {
 			AdminFacade adminFacade = (AdminFacade) this.getFacade(request);
 			if(adminFacade==null) {
@@ -194,7 +194,7 @@ public class AdminWebService {
 	 * @return @Customer
 	 */
 	@PutMapping(value = "/customer/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> updateCustomer(@RequestBody Customer customer, @PathVariable("id")long id, HttpServletRequest request) {
+	public ResponseEntity<?> updateCustomer(@RequestBody Customer customer, @PathVariable("id")int id, HttpServletRequest request) {
 		try {
 			AdminFacade adminFacade = (AdminFacade) this.getFacade(request);
 			if(adminFacade==null) {
