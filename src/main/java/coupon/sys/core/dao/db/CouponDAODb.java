@@ -36,7 +36,7 @@ public class CouponDAODb implements CouponDAO {
 		try {
 			connectionPool = ConnectionPool.getInstance();
 			con = connectionPool.getConnection();
-			String createCouponSql = "INSERT INTO coupon (title, start_date, end_date, amount, type, message, price, image) VALUES(?,?,?,?,?,?,?,?)";
+			String createCouponSql = "insert into coupon (title, start_date, end_date, amount, type, message, price, image) values(?,?,?,?,?,?,?,?)";
 			PreparedStatement pst = con.prepareStatement(createCouponSql, PreparedStatement.RETURN_GENERATED_KEYS);
 			pst.setString(1, coupon.getTitle());
 			pst.setDate(2, new java.sql.Date(coupon.getStartDate().getTime()));
@@ -73,7 +73,7 @@ public class CouponDAODb implements CouponDAO {
 		try {
 			connectionPool = ConnectionPool.getInstance();
 			con = connectionPool.getConnection();
-			String removeCouponSql = "DELETE FROM coupon WHERE id=" + coupon.getId();
+			String removeCouponSql = "delete from coupon where id=" + coupon.getId();
 			Statement st = con.createStatement();
 			st.executeUpdate(removeCouponSql);
 			st.close();
@@ -97,7 +97,7 @@ public class CouponDAODb implements CouponDAO {
 		try {
 			connectionPool = ConnectionPool.getInstance();
 			con = connectionPool.getConnection();
-			String updateCouponSql = "UPDATE coupon SET title=?, start_date=?, end_date=?, amount=?, type=?, message=?, price=?, image=? WHERE id= "
+			String updateCouponSql = "update coupon set title=?, start_date=?, end_date=?, amount=?, type=?, message=?, price=?, image=? where id= "
 					+ coupon.getId();
 			PreparedStatement pst = con.prepareStatement(updateCouponSql);
 			pst.setString(1, coupon.getTitle());
@@ -131,7 +131,7 @@ public class CouponDAODb implements CouponDAO {
 		try {
 			connectionPool = ConnectionPool.getInstance();
 			con = connectionPool.getConnection();
-			String getCouponSql = "SELECT * FROM coupon WHERE id=" + id;
+			String getCouponSql = "select * from coupon where id=" + id;
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(getCouponSql);
 			if(rs.next()) {
@@ -169,7 +169,7 @@ public class CouponDAODb implements CouponDAO {
 		try {
 			connectionPool = ConnectionPool.getInstance();
 			con = connectionPool.getConnection();
-			String getAllCouponsSql = "SELECT * FROM coupon";
+			String getAllCouponsSql = "select * from coupon";
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(getAllCouponsSql);
 			coupons = new HashSet<>();
@@ -209,7 +209,7 @@ public class CouponDAODb implements CouponDAO {
 		try {
 			connectionPool = ConnectionPool.getInstance();
 			con = connectionPool.getConnection();
-			String getCouponsByTypeSql = "SELECT * FROM coupon WHERE type='" + type.name() + "'";
+			String getCouponsByTypeSql = "select * from coupon where type='" + type.name() + "'";
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(getCouponsByTypeSql);
 			coupons = new HashSet<>();
@@ -249,7 +249,7 @@ public class CouponDAODb implements CouponDAO {
 		try {
 			connectionPool = ConnectionPool.getInstance();
 			con = connectionPool.getConnection();
-			String removeCustomerCouponSql = "DELETE FROM customer_coupon WHERE coupon_id=" + coupon.getId();
+			String removeCustomerCouponSql = "delete from customer_coupon where coupon_id=" + coupon.getId();
 			Statement st = con.createStatement();
 			st.executeUpdate(removeCustomerCouponSql);
 			st.close();
@@ -274,7 +274,7 @@ public class CouponDAODb implements CouponDAO {
 		try {
 			connectionPool = ConnectionPool.getInstance();
 			con = connectionPool.getConnection();
-			String removeCompanyCouponSql = "DELETE FROM company_coupon WHERE coupon_id=" + coupon.getId();
+			String removeCompanyCouponSql = "delete from company_coupon where coupon_id=" + coupon.getId();
 			Statement st = con.createStatement();
 			st.executeUpdate(removeCompanyCouponSql);
 			st.close();
@@ -298,8 +298,8 @@ public class CouponDAODb implements CouponDAO {
 		try {
 			connectionPool = ConnectionPool.getInstance();
 			con = connectionPool.getConnection();
-			String removeCouponSql = "DELETE FROM coupon WHERE coupon.id IN (SELECT company_coupon.coupon_Id FROM company_coupon "
-					+ "WHERE company_coupon.company_id =" + company.getId() + ")";
+			String removeCouponSql = "delete from coupon where coupon.id in (select company_coupon.coupon_id from company_coupon "
+					+ "where company_coupon.company_id =" + company.getId() + ")";
 			Statement st = con.createStatement();
 			st.executeUpdate(removeCouponSql);
 			st.close();
@@ -324,9 +324,9 @@ public class CouponDAODb implements CouponDAO {
 		try {
 			connectionPool = ConnectionPool.getInstance();
 			con = connectionPool.getConnection();
-			String removeCustomerCouponSql = "DELETE FROM customer_coupon WHERE customer_coupon.coupon_id IN (SELECT company_coupon.coupon_id "
-					+ "FROM company_coupon WHERE company_coupon.coupon_id=customer_coupon.coupon_id "
-					+ "AND company_coupon.company_id=" + company.getId() + ")";
+			String removeCustomerCouponSql = "delete from customer_coupon where customer_coupon.coupon_id in (select company_coupon.coupon_id "
+					+ "from company_coupon where company_coupon.coupon_id=customer_coupon.coupon_id "
+					+ "and company_coupon.company_id=" + company.getId() + ")";
 			Statement st = con.createStatement();
 			st.executeUpdate(removeCustomerCouponSql);
 			st.close();
@@ -351,7 +351,7 @@ public class CouponDAODb implements CouponDAO {
 		try {
 			connectionPool = ConnectionPool.getInstance();
 			con = connectionPool.getConnection();
-			String checkIfExistSql = "SELECT * FROM coupon WHERE title='" + coupon.getTitle() + "'";
+			String checkIfExistSql = "select * from coupon where title='" + coupon.getTitle() + "'";
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(checkIfExistSql);
 			if (rs.next()) {
@@ -380,7 +380,7 @@ public class CouponDAODb implements CouponDAO {
 		try {
 			connectionPool = ConnectionPool.getInstance();
 			con = connectionPool.getConnection();
-			String couponByDateSql = "SELECT * FROM coupon WHERE end_date<='" + new java.sql.Date(date.getTime()) + "'";
+			String couponByDateSql = "select * from coupon where end_date<='" + new java.sql.Date(date.getTime()) + "'";
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(couponByDateSql);
 			CouponByDate = new HashSet<>();
