@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = [[module.i, "body {\n  background: url('pexels-photo-255379.jpeg') no-repeat center center fixed;\n  background-size: cover;\n  min-height: 100%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9DOlxcVXNlcnNcXFBDXFxEZXNrdG9wXFxBbmd1bGFyXFxDb3Vwb25TeXN0ZW1cXEFkbWluU1BBL3NyY1xcc3R5bGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSwwRUFBa0Y7RUFJbEYsdUJBQXNCO0VBQ3RCLGlCQUFnQixFQUNuQiIsImZpbGUiOiJzcmMvc3R5bGVzLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJib2R5IHtcbiAgICBiYWNrZ3JvdW5kOiB1cmwoXCIuL2Fzc2V0cy9wZXhlbHMtcGhvdG8tMjU1Mzc5LmpwZWdcIikgbm8tcmVwZWF0IGNlbnRlciBjZW50ZXIgZml4ZWQ7IFxuICAgIC13ZWJraXQtYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcbiAgICAtbW96LWJhY2tncm91bmQtc2l6ZTogY292ZXI7XG4gICAgLW8tYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcbiAgICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xuICAgIG1pbi1oZWlnaHQ6IDEwMCU7XG59XG4iXX0= */", '', '']]
+module.exports = [[module.i, "body {\n  background: url('pexels-photo-255379.jpeg') no-repeat center center fixed;\n  background-size: cover;\n  min-height: 100%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9DOlxcVXNlcnNcXFBDXFxEZXNrdG9wXFxBbmd1bGFyXFxDb3Vwb25TeXN0ZW1cXGFkbWluc3BhL3NyY1xcc3R5bGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSwwRUFBa0Y7RUFJbEYsdUJBQXNCO0VBQ3RCLGlCQUFnQixFQUNuQiIsImZpbGUiOiJzcmMvc3R5bGVzLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJib2R5IHtcbiAgICBiYWNrZ3JvdW5kOiB1cmwoXCIuL2Fzc2V0cy9wZXhlbHMtcGhvdG8tMjU1Mzc5LmpwZWdcIikgbm8tcmVwZWF0IGNlbnRlciBjZW50ZXIgZml4ZWQ7IFxuICAgIC13ZWJraXQtYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcbiAgICAtbW96LWJhY2tncm91bmQtc2l6ZTogY292ZXI7XG4gICAgLW8tYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcbiAgICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xuICAgIG1pbi1oZWlnaHQ6IDEwMCU7XG59XG4iXX0= */", '', '']]
 
 /***/ }),
 
@@ -555,7 +555,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\PC\Desktop\Angular\CouponSystem\AdminSPA\src\styles.scss */"./src/styles.scss");
+module.exports = __webpack_require__(/*! C:\Users\PC\Desktop\Angular\CouponSystem\adminspa\src\styles.scss */"./src/styles.scss");
 
 
 /***/ })

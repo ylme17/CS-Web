@@ -555,7 +555,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\PC\Desktop\Angular\CouponSystem\customerspa\src\styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! C:\Users\PC\Desktop\Angular\CouponSystem\CustomerSPA\src\styles.css */"./src/styles.css");
 
 
 /***/ })

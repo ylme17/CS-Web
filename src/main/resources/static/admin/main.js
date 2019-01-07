@@ -197,17 +197,18 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var AppComponent = /** @class */ (function () {
     //provide SharedCompanyDataService for service
-    function AppComponent(_sharedCompanyDataService) {
-        this._sharedCompanyDataService = _sharedCompanyDataService;
+    function AppComponent(_sharedDataService) {
+        this._sharedDataService = _sharedDataService;
         this.title = 'CouponSystem';
     }
     AppComponent.prototype.ngOnInit = function () {
     };
     //log out method, send the client to login page
     AppComponent.prototype.logOut = function () {
-        this._sharedCompanyDataService.logOut(this.request, this.response).
+        var _this = this;
+        this._sharedDataService.logOut(this.request, this.response).
             subscribe(function (resp) {
-            window.location.href = 'http://localhost:8080/CouponSystem/login.html';
+            window.location.href = _this._sharedDataService.loginPageURL;
         });
     };
     AppComponent = __decorate([
@@ -401,11 +402,16 @@ var CreateCompanyComponent = /** @class */ (function () {
                 timer: 1500
             });
         }, function (err) {
-            sweetalert2__WEBPACK_IMPORTED_MODULE_3___default()({
-                type: 'error',
-                title: 'Oops...',
-                text: err._body
-            });
+            if (err.status == 403) {
+                window.location.href = _this._sharedDataService.loginPageURL;
+            }
+            else {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_3___default()({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: err._body
+                });
+            }
         });
     };
     CreateCompanyComponent = __decorate([
@@ -510,11 +516,16 @@ var CreateCustomerComponent = /** @class */ (function () {
             _this.showTable = true;
             _this.customerAdd = new _Common_Customer__WEBPACK_IMPORTED_MODULE_1__["Customer"](0, "", "");
         }, function (err) {
-            sweetalert2__WEBPACK_IMPORTED_MODULE_3___default()({
-                type: 'error',
-                title: 'Error',
-                text: err._body
-            });
+            if (err.status == 403) {
+                window.location.href = _this._sharedDataService.loginPageURL;
+            }
+            else {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_3___default()({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: err._body
+                });
+            }
         });
     };
     CreateCustomerComponent = __decorate([
@@ -599,11 +610,16 @@ var GetAllCompaniesComponent = /** @class */ (function () {
             subscribe(function (resp) {
             _this.companies = resp.json();
         }, function (err) {
-            sweetalert2__WEBPACK_IMPORTED_MODULE_2___default()({
-                type: 'error',
-                title: 'Oops...',
-                text: err._body
-            });
+            if (err.status == 403) {
+                window.location.href = _this._sharedDataService.loginPageURL;
+            }
+            else {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default()({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: err._body
+                });
+            }
         });
     };
     //method for delete company by id
@@ -631,11 +647,16 @@ var GetAllCompaniesComponent = /** @class */ (function () {
                     });
                     _this.getCompanies();
                 }, function (err) {
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_2___default()({
-                        type: 'error',
-                        title: 'Oops...',
-                        text: err._body
-                    });
+                    if (err.status == 403) {
+                        window.location.href = _this._sharedDataService.loginPageURL;
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_2___default()({
+                            type: 'error',
+                            title: 'Oops...',
+                            text: err._body
+                        });
+                    }
                 });
             }
         });
@@ -726,11 +747,16 @@ var GetAllCustomersComponent = /** @class */ (function () {
             subscribe(function (resp) {
             _this.customers = resp.json();
         }, function (err) {
-            sweetalert2__WEBPACK_IMPORTED_MODULE_2___default()({
-                type: 'error',
-                title: 'Oops...',
-                text: err._body
-            });
+            if (err.status == 403) {
+                window.location.href = _this._sharedDataService.loginPageURL;
+            }
+            else {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_2___default()({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: err._body
+                });
+            }
         });
     };
     //method for delete customer by id
@@ -758,11 +784,16 @@ var GetAllCustomersComponent = /** @class */ (function () {
                     });
                     _this.getCustomers();
                 }, function (err) {
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_2___default()({
-                        type: 'error',
-                        title: 'Oops...',
-                        text: err._body
-                    });
+                    if (err.status == 403) {
+                        window.location.href = _this._sharedDataService.loginPageURL;
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_2___default()({
+                            type: 'error',
+                            title: 'Oops...',
+                            text: err._body
+                        });
+                    }
                 });
             }
         });
@@ -928,11 +959,16 @@ var UpdateCompanyComponent = /** @class */ (function () {
                 subscribe(function (resp) {
                 _this.companyUpdate = resp.json();
             }, function (err) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_4___default()({
-                    type: 'error',
-                    title: 'Oops...',
-                    text: err._body
-                });
+                if (err.status == 403) {
+                    window.location.href = _this._sharedDataService.loginPageURL;
+                }
+                else {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_4___default()({
+                        type: 'error',
+                        title: 'Oops...',
+                        text: err._body
+                    });
+                }
             });
         });
     };
@@ -973,11 +1009,16 @@ var UpdateCompanyComponent = /** @class */ (function () {
                     _this.companyUpdate = new _Common_Company__WEBPACK_IMPORTED_MODULE_2__["Company"](0, "", "", "");
                     _this._router.navigate(['getallcompanies']);
                 }, function (err) {
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_4___default()({
-                        type: 'error',
-                        title: 'Oops...',
-                        text: err._body
-                    });
+                    if (err.status == 403) {
+                        window.location.href = _this._sharedDataService.loginPageURL;
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_4___default()({
+                            type: 'error',
+                            title: 'Oops...',
+                            text: err._body
+                        });
+                    }
                 });
             }
         });
@@ -1077,11 +1118,16 @@ var UpdateCustomerComponent = /** @class */ (function () {
                 subscribe(function (resp) {
                 _this.customerUpdate = resp.json();
             }, function (err) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_4___default()({
-                    type: 'error',
-                    title: 'Oops...',
-                    text: err._body
-                });
+                if (err.status == 403) {
+                    window.location.href = _this._sharedDataService.loginPageURL;
+                }
+                else {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_4___default()({
+                        type: 'error',
+                        title: 'Oops...',
+                        text: err._body
+                    });
+                }
             });
         });
     };
@@ -1121,11 +1167,16 @@ var UpdateCustomerComponent = /** @class */ (function () {
                     _this.customerUpdate = new _Common_Customer__WEBPACK_IMPORTED_MODULE_2__["Customer"](0, "", "");
                     _this._router.navigate(['getallcustomers']);
                 }, function (err) {
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_4___default()({
-                        type: 'error',
-                        title: 'Oops...',
-                        text: err._body
-                    });
+                    if (err.status == 403) {
+                        window.location.href = _this._sharedDataService.loginPageURL;
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_4___default()({
+                            type: 'error',
+                            title: 'Oops...',
+                            text: err._body
+                        });
+                    }
                 });
             }
         });
@@ -1220,8 +1271,8 @@ var SharedCompanyDataService = /** @class */ (function () {
     //provide Http for server requests
     function SharedCompanyDataService(_http) {
         this._http = _http;
-        //adminURL = "http://188.166.3.241:8080/CouponSystem/admin/company";
-        this.adminURL = "http://localhost:8080/CouponSystem/admin/company";
+        this.adminURL = "https://coupon-system-course-project.herokuapp.com/admin/company";
+        this.loginPageURL = "https://coupon-system-course-project.herokuapp.com/login.html";
     }
     SharedCompanyDataService.prototype.addCompany = function (company) {
         return this._http.post(this.adminURL, company);
@@ -1239,7 +1290,7 @@ var SharedCompanyDataService = /** @class */ (function () {
         return this._http.get(this.adminURL + "/" + id);
     };
     SharedCompanyDataService.prototype.logOut = function (request, response) {
-        return this._http.post("http://localhost:8080/CouponSystem/logout", request, response);
+        return this._http.post("https://coupon-system-course-project.herokuapp.com/logout", request, response);
     };
     SharedCompanyDataService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -1281,8 +1332,8 @@ var SharedCustomerDataService = /** @class */ (function () {
     //provide Http for server requests
     function SharedCustomerDataService(_http) {
         this._http = _http;
-        //adminURL = "http://188.166.3.241:8080/CouponSystem/admin/customer";
-        this.adminURL = "http://localhost:8080/CouponSystem/admin/customer";
+        this.adminURL = "https://coupon-system-course-project.herokuapp.com/admin/customer";
+        this.loginPageURL = "https://coupon-system-course-project.herokuapp.com/login.html";
     }
     SharedCustomerDataService.prototype.addCustomer = function (customer) {
         return this._http.post(this.adminURL, customer);
@@ -1373,7 +1424,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\PC\Desktop\Angular\CouponSystem\AdminSPA\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\PC\Desktop\Angular\CouponSystem\adminspa\src\main.ts */"./src/main.ts");
 
 
 /***/ })
