@@ -180,7 +180,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--navigation bar-->\n<nav class=\"navbar fixed-top navbar-expand-lg bg-dark navbar-dark\">\n    <ul class=\"navbar-nav\">\n        <li class=\"nav-item active\">\n            <a class=\"nav-link\" routerLink=\"/\"><i class=\"fas fa-home\"></i> Home</a>\n        </li>\n        <li class=\"nav-item active\">\n            <a class=\"nav-link\" routerLink=\"/createcoupon\"><i class=\"fas fa-plus\"></i> Create Coupon</a>\n        </li>\n        <li class=\"nav-item active\">\n            <a class=\"nav-link\" routerLink=\"/getallcoupons\"><i class=\"fas fa-list-ul\"></i> All Coupons</a>\n        </li>\n        <li class=\"nav-item active\">\n            <a class=\"nav-link\" routerLink=\"/getinfo\"><i class=\"fas fa-info-circle\"></i> Company details</a>\n        </li>\n        <li class=\"nav-item active\">\n            <a class=\"nav-link\" (click)=\"logOut()\">log out <i class=\"fas fa-sign-out-alt\"></i></a>\n        </li>\n    </ul>\n</nav>\n<br><br>\n<br><br>\n<router-outlet></router-outlet>\n<br><br>\n<br><br>\n"
+module.exports = "<!--navigation bar-->\n<nav class=\"navbar fixed-top navbar-expand-lg bg-dark navbar-dark\">\n    <a class=\"navbar-brand\" routerLink=\"/\"><i class=\"fas fa-home\"></i> Home</a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" routerLink=\"/createcoupon\"><i class=\"fas fa-plus\"></i> Create Coupon</a>\n            </li>\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" routerLink=\"/getallcoupons\"><i class=\"fas fa-list-ul\"></i> All Coupons</a>\n            </li>\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" routerLink=\"/getinfo\"><i class=\"fas fa-info-circle\"></i> Company details</a>\n            </li>\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" (click)=\"logOut()\">log out <i class=\"fas fa-sign-out-alt\"></i></a>\n            </li>\n        </ul>\n    </div>\n</nav>\n<br><br>\n<br><br>\n<router-outlet></router-outlet>\n<br><br>\n<br><br>\n"
 
 /***/ }),
 
@@ -1644,7 +1644,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\PC\Desktop\Angular\CouponSystem\companyspa\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\PC\Desktop\Angular\couponsystem\companyspa\src\main.ts */"./src/main.ts");
 
 
 /***/ })
