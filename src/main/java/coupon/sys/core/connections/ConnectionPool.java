@@ -21,8 +21,7 @@ public class ConnectionPool {
 	private static final int POOL_SIZE = 10;
 	private static ConnectionPool instance;
 	private boolean shutDown = false;
-	private static final String URL = "jdbc:postgresql://" + "ec2-79-125-4-96.eu-west-1.compute.amazonaws.com\r\n:5432"
-			+ "/de0t8ujom6l13v";
+	private static final String URL = "jdbc:postgresql://ec2-79-125-4-96.eu-west-1.compute.amazonaws.com:5432/de0t8ujom6l13v";
 	private static final String USERNAME = "zksauqzscsjtbr";
 	private static final String PASSWORD = "6a6aec2e4e881e83c8fc1e9f4109da242a0d92994f813fc7f944c38818197bc9";
 
