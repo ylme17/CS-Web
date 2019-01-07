@@ -121,7 +121,7 @@ public class CompanyDAODb implements CompanyDAO {
 		try {
 			connectionPool = ConnectionPool.getInstance();
 			con = connectionPool.getConnection();
-			String getCompanySql = "SELECT * FROM company WHERE id=" + id;
+			String getCompanySql = "select * from company where id=" + id;
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(getCompanySql);
 			if(rs.next()) {
@@ -154,7 +154,7 @@ public class CompanyDAODb implements CompanyDAO {
 		try {
 			connectionPool = ConnectionPool.getInstance();
 			con = connectionPool.getConnection();
-			String getCompanySql = "SELECT * FROM company WHERE id=" + loggedInCompany.getId();
+			String getCompanySql = "select * from company WHERE id=" + loggedInCompany.getId();
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(getCompanySql);
 			company = new Company();
@@ -186,7 +186,7 @@ public class CompanyDAODb implements CompanyDAO {
 		try {
 			connectionPool = ConnectionPool.getInstance();
 			con = connectionPool.getConnection();
-			String getAllCompaniesSql = "SELECT * FROM company";
+			String getAllCompaniesSql = "select * from company";
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(getAllCompaniesSql);
 			companies = new ArrayList<Company>();

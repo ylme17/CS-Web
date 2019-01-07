@@ -31,27 +31,27 @@ public class DBMethods {
 			String CompanyTable = "CREATE TABLE company(id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, company_name VARCHAR(255), "
 					+ "password VARCHAR(255), email VARCHAR(255))";
 			stmt.execute(CompanyTable);
-//			CREATE TABLE company(id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, company_name VARCHAR(255), password VARCHAR(255), email VARCHAR(255));
+//			create table company(id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, company_name VARCHAR(255), password VARCHAR(255), email VARCHAR(255));
 
 			String CustomerTable = "CREATE TABLE customer(id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, customer_name VARCHAR(255), "
 					+ "password VARCHAR(255))";
 			stmt.execute(CustomerTable);
-//			CREATE TABLE customer(id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, customer_name VARCHAR(255), password VARCHAR(255));
+//			create table customer(id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, customer_name VARCHAR(255), password VARCHAR(255));
 
 			String CouponTable = "CREATE TABLE coupon(id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, title VARCHAR(255), start_date DATE, "
 					+ "end_date DATE, amount INTEGER, type VARCHAR(50), message VARCHAR(255), price DOUBLE, image VARCHAR(255))";
 			stmt.execute(CouponTable);
-//			CREATE TABLE coupon(id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, title VARCHAR(255), start_date DATE, end_date DATE, amount INTEGER, type VARCHAR(50), message VARCHAR(255), price DOUBLE, image VARCHAR(255));
+//			create table coupon(id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, title VARCHAR(255), start_date DATE, end_date DATE, amount INTEGER, type VARCHAR(50), message VARCHAR(255), price DOUBLE PRECISION, image VARCHAR(255));
 
 			String CustomerCouponTable = "CREATE TABLE customer_coupon(customer_id BIGINT, coupon_id BIGINT, "
 					+ "PRIMARY KEY(customer_id, coupon_id))";
 			stmt.execute(CustomerCouponTable);
-//			CREATE TABLE customer_coupon(customer_id BIGINT, coupon_id BIGINT, PRIMARY KEY(customer_id, coupon_id));
+//			create table customer_coupon(customer_id BIGINT, coupon_id BIGINT, PRIMARY KEY(customer_id, coupon_id));
 
 			String CompanyCouponTable = "CREATE TABLE company_coupon(company_id BIGINT, coupon_id BIGINT, "
 					+ "PRIMARY KEY(company_id, coupon_id))";
 			stmt.execute(CompanyCouponTable);
-//			CREATE TABLE company_coupon(company_id BIGINT, coupon_id BIGINT, PRIMARY KEY(company_id, coupon_id));
+//			create table company_coupon(company_id BIGINT, coupon_id BIGINT, PRIMARY KEY(company_id, coupon_id));
 
 			System.out.println("tables created");
 		} catch (Exception e) {
