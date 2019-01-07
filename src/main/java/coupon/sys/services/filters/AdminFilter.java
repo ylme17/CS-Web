@@ -38,7 +38,7 @@ public class AdminFilter implements Filter {
         HttpSession session = req.getSession(false);
 
         if (session == null || session.getAttribute("AdminFacade") == null || !(session.getAttribute("AdminFacade") instanceof AdminFacadeInterface)) {
-            res.sendRedirect("http://localhost:8080/login.html");
+            res.sendRedirect("https://coupon-system-course-project.herokuapp.com/login.html");
         } else {
             chain.doFilter(request, response);
         }		

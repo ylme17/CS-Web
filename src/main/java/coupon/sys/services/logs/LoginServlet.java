@@ -32,23 +32,23 @@ public class LoginServlet {
 			
 			if (clientFacade == null)
 			{
-				return "redirect:http://localhost:8080/CouponSystem/login.html";
+				return "redirect:https://coupon-system-course-project.herokuapp.com/login.html";
 			}
 			
 			if(clientFacade instanceof AdminFacadeInterface) {
 				request.getSession().setAttribute("AdminFacade", clientFacade);
-				return "redirect:http://localhost:8080/CouponSystem/admin/index.html";
+				return "redirect:https://coupon-system-course-project.herokuapp.com/admin/index.html";
 			} else if(clientFacade instanceof CompanyFacadeInterface) {
 				request.getSession().setAttribute("CompanyFacade", clientFacade);
-				return "redirect:http://localhost:8080/CouponSystem/company/index.html";
+				return "redirect:https://coupon-system-course-project.herokuapp.com/company/index.html";
 			} else if(clientFacade instanceof CustomerFacadeInterface) {
 				request.getSession().setAttribute("CustomerFacade", clientFacade);
-				return "redirect:http://localhost:8080/CouponSystem/customer/index.html";
+				return "redirect:https://coupon-system-course-project.herokuapp.com/customer/index.html";
 			}
-			return "redirect:http://localhost:8080/CouponSystem/login.html";
+			return "redirect:https://coupon-system-course-project.herokuapp.com/login.html";
 
 		} catch (CouponSystemException e) {
-			return "redirect:http://localhost:8080/CouponSystem/login.html";
+			return "redirect:https://coupon-system-course-project.herokuapp.com/login.html";
 		}
 		
 	}

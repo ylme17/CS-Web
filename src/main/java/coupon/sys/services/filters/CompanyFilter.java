@@ -38,7 +38,7 @@ public class CompanyFilter implements Filter {
         HttpSession session = req.getSession(false);
         
         if (session == null || session.getAttribute("CompanyFacade") == null || !(session.getAttribute("CompanyFacade") instanceof CompanyFacadeInterface)) {
-            res.sendRedirect("http://localhost:8080/login.html");
+            res.sendRedirect("https://coupon-system-course-project.herokuapp.com/login.html");
         } else {
             chain.doFilter(request, response);
         }		
