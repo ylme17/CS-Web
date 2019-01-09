@@ -34,10 +34,11 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Company", function() { return Company; });
 var Company = /** @class */ (function () {
-    function Company(id, name, password, email) {
+    function Company(id, name, password, confirmPassword, email) {
         this.id = id;
         this.name = name;
         this.password = password;
+        this.confirmPassword = confirmPassword;
         this.email = email;
     }
     return Company;
@@ -58,10 +59,11 @@ var Company = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Customer", function() { return Customer; });
 var Customer = /** @class */ (function () {
-    function Customer(id, name, password) {
+    function Customer(id, name, password, confirmPassword) {
         this.id = id;
         this.name = name;
         this.password = password;
+        this.confirmPassword = confirmPassword;
     }
     return Customer;
 }());
@@ -323,7 +325,7 @@ module.exports = "form{\r\n    margin-left: 20%;\r\n    width: 30%;\r\n}\r\n/*# 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--form for add company-->\n<form novalidate [formGroup]=\"myForm\">\n  <legend>Hello Guest,<br> please fill the fields</legend>\n\n  <!--input field for name-->\n  <div class=\"form-group\">\n    <label>Name</label>\n    <input type=\"text\" class=\"form-control\" formControlName=\"name\" placeholder=\"Name\" [(ngModel)]=\"companyAdd.name\" \n      [ngClass]=\"{ 'is-invalid': myForm.controls.name.errors && (myForm.controls.name.touched || myForm.controls.name.dirty) }\">\n    <div *ngIf=\"myForm.controls.name.errors && (myForm.controls.name.touched || myForm.controls.name.dirty)\" class=\"invalid-feedback\">\n      <small *ngIf=\"myForm.controls.name.errors.required\">Name is required</small>\n    </div>\n  </div>\n\n  <!--input field for password-->\n  <div class=\"form-group\">\n    <label>Password</label>\n    <input type=\"password\" class=\"form-control\" formControlName=\"password\" placeholder=\"Password\" [(ngModel)]=\"companyAdd.password\" \n      [ngClass]=\"{ 'is-invalid': myForm.controls.password.errors && (myForm.controls.password.touched || myForm.controls.password.dirty) }\">\n    <div *ngIf=\"myForm.controls.password.errors && (myForm.controls.password.touched || myForm.controls.password.dirty)\" class=\"invalid-feedback\">\n      <small *ngIf=\"myForm.controls.password.errors.required\">Password is required</small>\n      <small *ngIf=\"myForm.controls.password.errors.minlength\">Password must be at least 5 characters</small>\n      <small *ngIf=\"myForm.controls.password.errors.maxlength\">Password must be maximum 8 characters</small>\n    </div>\n  </div>\n  \n  <!--input field for confirm password-->\n  <div class=\"form-group\">\n    <label>Retype Password</label>\n    <input type=\"password\" class=\"form-control\" formControlName=\"confirmPassword\" placeholder=\"Confirm Password\"\n      [ngClass]=\"{ 'is-invalid': myForm.controls.confirmPassword.errors && (myForm.controls.confirmPassword.touched || myForm.controls.confirmPassword.dirty) }\">\n    <div *ngIf=\"myForm.controls.confirmPassword.errors && (myForm.controls.confirmPassword.touched || myForm.controls.confirmPassword.dirty)\" class=\"invalid-feedback\">\n      <small *ngIf=\"myForm.controls.confirmPassword.errors.required\">Confirm Password is required</small>\n      <small *ngIf=\"myForm.controls.confirmPassword.errors.passwordNotMatch\">Password not match</small>\n    </div>\n  </div>\n\n  <!--input field for email-->\n  <div class=\"form-group\">\n    <label>Email</label>\n    <input type=\"email\" class=\"form-control\" formControlName=\"email\" placeholder=\"Email\" [(ngModel)]=\"companyAdd.email\" \n      [ngClass]=\"{ 'is-invalid': myForm.controls.email.errors && (myForm.controls.email.touched || myForm.controls.email.dirty) }\">\n    <div *ngIf=\"myForm.controls.email.errors && (myForm.controls.email.touched || myForm.controls.email.dirty)\" class=\"invalid-feedback\">\n      <small *ngIf=\"myForm.controls.email.errors.required\">Email is required</small>\n      <small *ngIf=\"myForm.controls.email.errors.email\">Email must be a valid email address</small>\n    </div>\n  </div>\n\n  <!--button become enable only when the form valid-->\n  <button (click)=\"addCompany()\" [disabled]=\"!myForm.valid\" class=\"btn btn-success\">Sign Up <i class=\"fas fa-user-plus\"></i></button>\n</form>\n"
+module.exports = "<!--form for add company-->\n<form novalidate [formGroup]=\"myForm\">\n  <legend>Hello Guest,<br> please fill the fields</legend>\n\n  <!--input field for name-->\n  <div class=\"form-group\">\n    <label>Name</label>\n    <input type=\"text\" class=\"form-control\" formControlName=\"name\" placeholder=\"Name\" [(ngModel)]=\"companyAdd.name\" \n      [ngClass]=\"{ 'is-invalid': myForm.controls.name.errors && (myForm.controls.name.touched || myForm.controls.name.dirty) }\">\n    <div *ngIf=\"myForm.controls.name.errors && (myForm.controls.name.touched || myForm.controls.name.dirty)\" class=\"invalid-feedback\">\n      <small *ngIf=\"myForm.controls.name.errors.required\">Name is required</small>\n    </div>\n  </div>\n\n  <!--input field for password-->\n  <div class=\"form-group\">\n    <label>Password</label>\n    <input type=\"password\" class=\"form-control\" formControlName=\"password\" placeholder=\"Password\" [(ngModel)]=\"companyAdd.password\" \n      [ngClass]=\"{ 'is-invalid': myForm.controls.password.errors && (myForm.controls.password.touched || myForm.controls.password.dirty) }\">\n    <div *ngIf=\"myForm.controls.password.errors && (myForm.controls.password.touched || myForm.controls.password.dirty)\" class=\"invalid-feedback\">\n      <small *ngIf=\"myForm.controls.password.errors.required\">Password is required</small>\n      <small *ngIf=\"myForm.controls.password.errors.minlength\">Password must be at least 5 characters</small>\n      <small *ngIf=\"myForm.controls.password.errors.maxlength\">Password must be maximum 8 characters</small>\n    </div>\n  </div>\n  \n  <!--input field for confirm password-->\n  <div class=\"form-group\">\n    <label>Retype Password</label>\n    <input type=\"password\" class=\"form-control\" formControlName=\"confirmPassword\" placeholder=\"Confirm Password\" [(ngModel)]=\"companyAdd.confirmPassword\"\n      [ngClass]=\"{ 'is-invalid': myForm.controls.confirmPassword.errors && (myForm.controls.confirmPassword.touched || myForm.controls.confirmPassword.dirty) }\">\n    <div *ngIf=\"myForm.controls.confirmPassword.errors && (myForm.controls.confirmPassword.touched || myForm.controls.confirmPassword.dirty)\" class=\"invalid-feedback\">\n      <small *ngIf=\"myForm.controls.confirmPassword.errors.required\">Confirm Password is required</small>\n      <small *ngIf=\"myForm.controls.confirmPassword.errors.passwordNotMatch\">Password not match</small>\n    </div>\n  </div>\n\n  <!--input field for email-->\n  <div class=\"form-group\">\n    <label>Email</label>\n    <input type=\"email\" class=\"form-control\" formControlName=\"email\" placeholder=\"Email\" [(ngModel)]=\"companyAdd.email\" \n      [ngClass]=\"{ 'is-invalid': myForm.controls.email.errors && (myForm.controls.email.touched || myForm.controls.email.dirty) }\">\n    <div *ngIf=\"myForm.controls.email.errors && (myForm.controls.email.touched || myForm.controls.email.dirty)\" class=\"invalid-feedback\">\n      <small *ngIf=\"myForm.controls.email.errors.required\">Email is required</small>\n      <small *ngIf=\"myForm.controls.email.errors.email\">Email must be a valid email address</small>\n    </div>\n  </div>\n\n  <!--button become enable only when the form valid-->\n  <button (click)=\"addCompany()\" [disabled]=\"!myForm.valid\" class=\"btn btn-success\">Sign Up <i class=\"fas fa-user-plus\"></i></button>\n</form>\n"
 
 /***/ }),
 
@@ -364,7 +366,7 @@ var CreateCompanyComponent = /** @class */ (function () {
     function CreateCompanyComponent(_sharedDataService, _formBuilder) {
         this._sharedDataService = _sharedDataService;
         this._formBuilder = _formBuilder;
-        this.companyAdd = new _Common_Company__WEBPACK_IMPORTED_MODULE_1__["Company"](0, "", "", "");
+        this.companyAdd = new _Common_Company__WEBPACK_IMPORTED_MODULE_1__["Company"](0, "", "", "", "");
     }
     //initialize form validation
     CreateCompanyComponent.prototype.ngOnInit = function () {
@@ -386,7 +388,7 @@ var CreateCompanyComponent = /** @class */ (function () {
         var _this = this;
         this._sharedDataService.addCompany(this.companyAdd).
             subscribe(function (resp) {
-            _this.companyAdd = new _Common_Company__WEBPACK_IMPORTED_MODULE_1__["Company"](0, "", "", "");
+            _this.companyAdd = new _Common_Company__WEBPACK_IMPORTED_MODULE_1__["Company"](0, "", "", "", "");
             sweetalert2__WEBPACK_IMPORTED_MODULE_3___default()({
                 type: 'success',
                 title: 'Company created',
@@ -434,7 +436,7 @@ module.exports = "form{\r\n    margin-left: 20%;\r\n    width: 30%;\r\n}\r\n/*# 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--form for add customer-->\n<form novalidate [formGroup]=\"myForm\">\n  <legend>Hello Guest,<br> please fill the fields</legend>\n\n  <!--input field for name-->\n  <div class=\"form-group\">\n    <label>Name</label>\n    <input type=\"text\" class=\"form-control\" formControlName=\"name\" placeholder=\"Name\" [(ngModel)]=\"customerAdd.name\" \n      [ngClass]=\"{ 'is-invalid': myForm.controls.name.errors && (myForm.controls.name.touched || myForm.controls.name.dirty) }\">\n    <div *ngIf=\"myForm.controls.name.errors && (myForm.controls.name.touched || myForm.controls.name.dirty)\" class=\"invalid-feedback\">\n      <small *ngIf=\"myForm.controls.name.errors.required\">Name is required</small>\n    </div>\n  </div>\n\n  <!--input field for password-->\n  <div class=\"form-group\">\n    <label>Password</label>\n    <input type=\"password\" class=\"form-control\" formControlName=\"password\" placeholder=\"Password\" [(ngModel)]=\"customerAdd.password\" \n      [ngClass]=\"{ 'is-invalid': myForm.controls.password.errors && (myForm.controls.password.touched || myForm.controls.password.dirty) }\">\n    <div *ngIf=\"myForm.controls.password.errors && (myForm.controls.password.touched || myForm.controls.password.dirty)\" class=\"invalid-feedback\">\n      <small *ngIf=\"myForm.controls.password.errors.required\">Password is required</small>\n      <small *ngIf=\"myForm.controls.password.errors.minlength\">Password must be at least 5 characters</small>\n      <small *ngIf=\"myForm.controls.password.errors.maxlength\">Password must be maximum 8 characters</small>\n    </div>\n  </div>\n\n  <!--input field for confirm password-->\n  <div class=\"form-group\">\n    <label>Retype Password</label>\n    <input type=\"password\" class=\"form-control\" formControlName=\"confirmPassword\" placeholder=\"Confirm Password\"\n      [ngClass]=\"{ 'is-invalid': myForm.controls.confirmPassword.errors && (myForm.controls.confirmPassword.touched || myForm.controls.confirmPassword.dirty) }\">\n    <div *ngIf=\"myForm.controls.confirmPassword.errors && (myForm.controls.confirmPassword.touched || myForm.controls.confirmPassword.dirty)\" class=\"invalid-feedback\">\n      <small *ngIf=\"myForm.controls.confirmPassword.errors.required\">Confirm Password is required</small>\n      <small *ngIf=\"myForm.controls.confirmPassword.errors.passwordNotMatch\">Password not match</small>\n    </div>\n  </div>\n\n  <!--button become enable only when the form valid-->\n  <button (click)=\"addCustomer()\" [disabled]=\"!myForm.valid\" class=\"btn btn-success\">Sign Up <i class=\"fas fa-user-plus\"></i></button>\n</form>"
+module.exports = "<!--form for add customer-->\n<form novalidate [formGroup]=\"myForm\">\n  <legend>Hello Guest,<br> please fill the fields</legend>\n\n  <!--input field for name-->\n  <div class=\"form-group\">\n    <label>Name</label>\n    <input type=\"text\" class=\"form-control\" formControlName=\"name\" placeholder=\"Name\" [(ngModel)]=\"customerAdd.name\" \n      [ngClass]=\"{ 'is-invalid': myForm.controls.name.errors && (myForm.controls.name.touched || myForm.controls.name.dirty) }\">\n    <div *ngIf=\"myForm.controls.name.errors && (myForm.controls.name.touched || myForm.controls.name.dirty)\" class=\"invalid-feedback\">\n      <small *ngIf=\"myForm.controls.name.errors.required\">Name is required</small>\n    </div>\n  </div>\n\n  <!--input field for password-->\n  <div class=\"form-group\">\n    <label>Password</label>\n    <input type=\"password\" class=\"form-control\" formControlName=\"password\" placeholder=\"Password\" [(ngModel)]=\"customerAdd.password\" \n      [ngClass]=\"{ 'is-invalid': myForm.controls.password.errors && (myForm.controls.password.touched || myForm.controls.password.dirty) }\">\n    <div *ngIf=\"myForm.controls.password.errors && (myForm.controls.password.touched || myForm.controls.password.dirty)\" class=\"invalid-feedback\">\n      <small *ngIf=\"myForm.controls.password.errors.required\">Password is required</small>\n      <small *ngIf=\"myForm.controls.password.errors.minlength\">Password must be at least 5 characters</small>\n      <small *ngIf=\"myForm.controls.password.errors.maxlength\">Password must be maximum 8 characters</small>\n    </div>\n  </div>\n\n  <!--input field for confirm password-->\n  <div class=\"form-group\">\n    <label>Retype Password</label>\n    <input type=\"password\" class=\"form-control\" formControlName=\"confirmPassword\" placeholder=\"Confirm Password\" [(ngModel)]=\"customerAdd.confirmPassword\"\n      [ngClass]=\"{ 'is-invalid': myForm.controls.confirmPassword.errors && (myForm.controls.confirmPassword.touched || myForm.controls.confirmPassword.dirty) }\">\n    <div *ngIf=\"myForm.controls.confirmPassword.errors && (myForm.controls.confirmPassword.touched || myForm.controls.confirmPassword.dirty)\" class=\"invalid-feedback\">\n      <small *ngIf=\"myForm.controls.confirmPassword.errors.required\">Confirm Password is required</small>\n      <small *ngIf=\"myForm.controls.confirmPassword.errors.passwordNotMatch\">Password not match</small>\n    </div>\n  </div>\n\n  <!--button become enable only when the form valid-->\n  <button (click)=\"addCustomer()\" [disabled]=\"!myForm.valid\" class=\"btn btn-success\">Sign Up <i class=\"fas fa-user-plus\"></i></button>\n</form>"
 
 /***/ }),
 
@@ -475,7 +477,7 @@ var CreateCustomerComponent = /** @class */ (function () {
     function CreateCustomerComponent(_sharedDataService, _formBuilder) {
         this._sharedDataService = _sharedDataService;
         this._formBuilder = _formBuilder;
-        this.customerAdd = new _Common_Customer__WEBPACK_IMPORTED_MODULE_1__["Customer"](0, "", "");
+        this.customerAdd = new _Common_Customer__WEBPACK_IMPORTED_MODULE_1__["Customer"](0, "", "", "");
     }
     //initialize form validation
     CreateCustomerComponent.prototype.ngOnInit = function () {
@@ -502,7 +504,7 @@ var CreateCustomerComponent = /** @class */ (function () {
                 showConfirmButton: false,
                 timer: 1500
             });
-            _this.customerAdd = new _Common_Customer__WEBPACK_IMPORTED_MODULE_1__["Customer"](0, "", "");
+            _this.customerAdd = new _Common_Customer__WEBPACK_IMPORTED_MODULE_1__["Customer"](0, "", "", "");
         }, function (err) {
             sweetalert2__WEBPACK_IMPORTED_MODULE_3___default()({
                 type: 'error',
