@@ -100,12 +100,12 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var routes = [
     {
-        path: 'home',
-        component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"]
-    },
-    {
         path: '',
         component: _components_create_customer_create_customer_component__WEBPACK_IMPORTED_MODULE_2__["CreateCustomerComponent"]
+    },
+    {
+        path: 'home',
+        component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"]
     },
     {
         path: 'company',
