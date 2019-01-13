@@ -86,7 +86,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _components_create_customer_create_customer_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/create-customer/create-customer.component */ "./src/app/components/create-customer/create-customer.component.ts");
 /* harmony import */ var _components_create_company_create_company_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/create-company/create-company.component */ "./src/app/components/create-company/create-company.component.ts");
-/* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -97,15 +96,10 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-
 var routes = [
     {
         path: '',
         component: _components_create_customer_create_customer_component__WEBPACK_IMPORTED_MODULE_2__["CreateCustomerComponent"]
-    },
-    {
-        path: 'home',
-        component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"]
     },
     {
         path: 'company',
