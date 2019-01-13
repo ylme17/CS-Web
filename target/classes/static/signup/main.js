@@ -100,11 +100,11 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var routes = [
     {
-        path: '',
+        path: 'home',
         component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"]
     },
     {
-        path: 'customer',
+        path: '',
         component: _components_create_customer_create_customer_component__WEBPACK_IMPORTED_MODULE_2__["CreateCustomerComponent"]
     },
     {
@@ -709,7 +709,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\PC\Desktop\Angular\CouponSystem\signup\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\PC\Desktop\Angular\CouponSystem\SignUp\src\main.ts */"./src/main.ts");
 
 
 /***/ })
