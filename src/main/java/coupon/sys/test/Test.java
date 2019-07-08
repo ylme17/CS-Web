@@ -40,17 +40,17 @@ public class Test {
 			Customer chaim = new Customer("chaim", "123456");
 			
 			Date today = CurrentDate.getCurrentDate();
-			Date date1 = new GregorianCalendar(2019, Calendar.MARCH, 30).getTime();
-			Date date2 = new GregorianCalendar(2019, Calendar.JANUARY, 30).getTime();
-			Date date3 = new GregorianCalendar(2019, Calendar.JANUARY, 15).getTime();
-			Date date4 = new GregorianCalendar(2019, Calendar.FEBRUARY, 30).getTime();
-			Date date5 = new GregorianCalendar(2019, Calendar.FEBRUARY, 10).getTime();
-			Date date6 = new GregorianCalendar(2019, Calendar.FEBRUARY, 17).getTime();
-			Date date7 = new GregorianCalendar(2019, Calendar.MARCH, 25).getTime();
-			Date date8 = new GregorianCalendar(2019, Calendar.MARCH, 1).getTime();
-			Date date9 = new GregorianCalendar(2019, Calendar.MARCH, 12).getTime();
-			Date date10 = new GregorianCalendar(2019, Calendar.FEBRUARY, 25).getTime();
-			Date date11 = new GregorianCalendar(2019, Calendar.MARCH, 18).getTime();
+			Date date1 = new GregorianCalendar(2022, Calendar.MARCH, 30).getTime();
+			Date date2 = new GregorianCalendar(2022, Calendar.JANUARY, 30).getTime();
+			Date date3 = new GregorianCalendar(2022, Calendar.MAY, 15).getTime();
+			Date date4 = new GregorianCalendar(2022, Calendar.FEBRUARY, 30).getTime();
+			Date date5 = new GregorianCalendar(2022, Calendar.JULY, 10).getTime();
+			Date date6 = new GregorianCalendar(2022, Calendar.FEBRUARY, 17).getTime();
+			Date date7 = new GregorianCalendar(2023, Calendar.MARCH, 25).getTime();
+			Date date8 = new GregorianCalendar(2023, Calendar.OCTOBER, 1).getTime();
+			Date date9 = new GregorianCalendar(2023, Calendar.MARCH, 12).getTime();
+			Date date10 = new GregorianCalendar(2023, Calendar.FEBRUARY, 25).getTime();
+			Date date11 = new GregorianCalendar(2023, Calendar.AUGUST, 18).getTime();
 			
 			Coupon breakfast = new Coupon("breakfast", today, date1, 50, CouponType.RESTURANTS, "breakfast and coffee", 15, "http://www.cbc.ca/inthekitchen/assets_c/2013/10/Steak'nEggs26-thumb-596x350-329015.jpg");
 			Coupon microwave = new Coupon("microwave", today, date2, 30, CouponType.ELECTRICITY, "powerful microwave", 150, "https://hnsfpau.imgix.net/5/images/detailed/40/NN-SF574SQPQ-1.jpg?fit=fill&bg=0FFF&w=785&h=523&auto=format,compress");
